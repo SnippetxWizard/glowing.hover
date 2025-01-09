@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glowing Hover Effect</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column; /* Align elements vertically */
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #121212;
+      font-family: Arial, sans-serif;
+    }
+
+    .glowing-button {
+      padding: 15px 30px;
+      font-size: 18px;
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+      background: linear-gradient(90deg, #ff6a00, #ee0979);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      position: relative;
+    }
+
+    .glowing-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, #ff6a00, #ee0979);
+      filter: blur(15px);
+      opacity: 0.5;
+      border-radius: 30px;
+      z-index: -1;
+      transition: opacity 0.3s ease;
+    }
+
+    .glowing-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #ff6a00, 0 0 40px #ee0979, 0 0 60px #ff6a00;
+    }
+
+    .glowing-button:hover::before {
+      opacity: 1;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif; /* Use a modern font */
+      font-size: 3rem; /* Adjust size as needed */
+      font-weight: bold; /* Make it stand out */
+      text-transform: uppercase; /* Transform text to uppercase */
+      text-align: center; /* Center-align the text */
+      color: #ffffff; /* Text color */
+      background: linear-gradient(90deg, #02c3f8, #12fc01); /* Gradient background */
+      -webkit-background-clip: text; /* Clip the background to the text */
+      -webkit-text-fill-color: transparent; /* Make the text transparent */
+      letter-spacing: 3px; /* Add spacing between letters */
+      text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+      margin: 20px 0; /* Add margin for spacing */
+      animation: glow 1.5s infinite alternate; /* Add a glowing effect */
+    }
+
+   
+  </style>
+</head>
+<body>
+  <div class="glowing-button">
+    Hover Me
+  </div>
+  <h1>
+    FOLLOW "SNIPPET WIZARD"
+  </h1>
+  <script>
+    // Optional: Add dynamic behavior if needed
+    console.log("Glowing hover effect loaded!");
+  </script>
+</body>
+</html>
